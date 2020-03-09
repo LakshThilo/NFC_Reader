@@ -14,8 +14,8 @@ import javax.swing.SwingConstants;
 
 import com.lak.uni.controller.Student;
 
-public class WelcomePage2 extends JFrame {
-	private WelcomePage2 mainFrame;
+public class StudentDetail extends JFrame {
+	private StudentDetail mainFrame;
 	
 	private Student student;
 	
@@ -34,7 +34,7 @@ public class WelcomePage2 extends JFrame {
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	
-	public WelcomePage2(Student student) {
+	public StudentDetail(Student student) {
 		
 		this.student = student;
 		
@@ -45,7 +45,7 @@ public class WelcomePage2 extends JFrame {
 	
 	}
 
-	public WelcomePage2() {
+	public StudentDetail() {
 		
 		init();
 		

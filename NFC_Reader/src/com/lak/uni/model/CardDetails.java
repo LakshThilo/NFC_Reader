@@ -5,7 +5,7 @@ import java.util.List;
 import com.lak.uni.controller.Controller;
 import com.lak.uni.controller.Student;
 import com.lak.uni.controller.StudentList;
-import com.lak.uni.veiw.WelcomePage2;
+import com.lak.uni.veiw.StudentDetail;
 import com.lak.uni.veiw.Connect;
 
 public class CardDetails

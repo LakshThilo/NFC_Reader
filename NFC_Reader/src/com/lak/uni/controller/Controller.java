@@ -1,6 +1,6 @@
 package com.lak.uni.controller;
 
-import com.lak.uni.veiw.WelcomePage2;
+import com.lak.uni.veiw.StudentDetail;
 
 public class Controller {
 	
@@ -10,7 +10,7 @@ public class Controller {
     public Controller(Student student) {
 		
     	this.student = student;
-    	new WelcomePage2(student);
+    	new StudentDetail(student);
     	print();
     	
 	} 
