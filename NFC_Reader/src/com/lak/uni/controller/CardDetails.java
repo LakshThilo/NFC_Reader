@@ -1,10 +1,7 @@
-package com.lak.uni.model;
+package com.lak.uni.controller;
 
 import java.util.List;
 
-import com.lak.uni.controller.Controller;
-import com.lak.uni.controller.Student;
-import com.lak.uni.controller.StudentList;
 import com.lak.uni.veiw.StudentDetail;
 import com.lak.uni.veiw.Connect;
 

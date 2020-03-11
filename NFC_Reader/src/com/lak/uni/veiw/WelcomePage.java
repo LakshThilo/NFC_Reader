@@ -111,7 +111,7 @@ public class WelcomePage extends JFrame {
 		panel_10.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
-		Image image = new ImageIcon(this.getClass().getResource("/images/time.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
+		Image image = new ImageIcon(this.getClass().getResource("/images/details.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
 		lblNewLabel_3.setIcon(new ImageIcon(image));
 		lblNewLabel_3.setBounds(0, 73, 283, 174);
 		panel_4.add(lblNewLabel_3);
@@ -162,7 +162,7 @@ public class WelcomePage extends JFrame {
 		panel_12.add(label_1);
 		
 		JLabel label_2 = new JLabel("");
-		Image image3 = new ImageIcon(this.getClass().getResource("/images/students.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
+		Image image3 = new ImageIcon(this.getClass().getResource("/images/details.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
 		label_2.setIcon(new ImageIcon(image3));
 		//label_2.setIcon(new ImageIcon(WelcomePage.class.getResource("/images/details.png")));
 		label_2.setBounds(0, 72, 283, 175);
@@ -214,7 +214,7 @@ public class WelcomePage extends JFrame {
 		panel_14.add(lblAdsentStudents);
 		
 		JLabel label_4 = new JLabel("");
-		Image image5 = new ImageIcon(this.getClass().getResource("/images/absent.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
+		Image image5 = new ImageIcon(this.getClass().getResource("/images/details.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
 		label_4.setIcon(new ImageIcon(image5));
 		//label_4.setIcon(new ImageIcon(WelcomePage.class.getResource("/images/details.png")));
 		label_4.setBounds(0, 72, 283, 175);

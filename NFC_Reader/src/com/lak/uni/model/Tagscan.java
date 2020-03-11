@@ -11,7 +11,7 @@ import javax.smartcardio.CommandAPDU;
 import javax.smartcardio.ResponseAPDU;
 import javax.smartcardio.TerminalFactory;
 
-import com.lak.uni.model.CardDetails;
+import com.lak.uni.controller.CardDetails;
 
 public class Tagscan {
 
