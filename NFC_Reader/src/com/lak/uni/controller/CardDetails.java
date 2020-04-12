@@ -4,7 +4,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import com.lak.uni.veiw.StudentDetail;
+import com.lak.uni.veiw.StudentRegistration;
 import com.lak.uni.model.DatabaseService;
 import com.lak.uni.model.Student;
 import com.lak.uni.veiw.Connect;
@@ -40,8 +43,21 @@ public class CardDetails
 				if(student.getUID().equals(UID)) {
 					
 					System.out.println(student.toString());
-					new Controller(student);
+					new StudentDetail(student);
 					
+				}else {
+					System.out.println("Details not recored");
+					int n = JOptionPane.showConfirmDialog(null, "Student is not registered\n Do you want register?","Record Error!",JOptionPane.YES_NO_OPTION);
+					System.out.println(n);
+					
+					switch (n) {
+					case 0:
+						new StudentRegistration();
+						break;
+
+					default:
+						break;
+					}
 				}
 			}
 		} catch (SQLException e) {

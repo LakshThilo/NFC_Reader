@@ -190,7 +190,7 @@ public class DatabaseService {
 			
 			while (rs.next()) {
 				
-				System.out.println("Student UID: "+ rs.getString("st_UID")+" Student ID:"+rs.getString("st_ID")+"   Name:"+rs.getString("st_Name")+"   Course:"+rs.getString("st_course")+"   Batch:"+rs.getString("st_batch"));
+				//System.out.println("Student UID: "+ rs.getString("st_UID")+" Student ID:"+rs.getString("st_ID")+"   Name:"+rs.getString("st_Name")+"   Course:"+rs.getString("st_course")+"   Batch:"+rs.getString("st_batch"));
 				student = new Student(rs.getString("st_UID"),rs.getString("st_ID"),rs.getString("st_Name"),rs.getString("st_course"),rs.getString("st_batch"));
 				studentList.add(student);
 				
