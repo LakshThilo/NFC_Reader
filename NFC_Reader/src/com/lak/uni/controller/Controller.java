@@ -1,5 +1,6 @@
 package com.lak.uni.controller;
 
+import com.lak.uni.model.Student;
 import com.lak.uni.veiw.StudentDetail;
 
 public class Controller {

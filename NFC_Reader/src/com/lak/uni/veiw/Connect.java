@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.lak.uni.controller.Controller;
-import com.lak.uni.model.MultiThreading;
+import com.lak.uni.controller.MultiThreading;
 
 public class Connect extends JFrame {
 

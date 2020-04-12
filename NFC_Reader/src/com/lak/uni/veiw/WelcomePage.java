@@ -21,7 +21,7 @@ public class WelcomePage extends JFrame {
 	public WelcomePage() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1081, 862);
+		setBounds(100, 100, 1077, 807);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -33,8 +33,8 @@ public class WelcomePage extends JFrame {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(51, 153, 255));
-		panel_1.setBounds(0, 0, 1071, 96);
+		panel_1.setBackground(Color.DARK_GRAY);
+		panel_1.setBounds(0, 0, 1071, 77);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -42,12 +42,12 @@ public class WelcomePage extends JFrame {
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Bell MT", Font.BOLD, 30));
-		lblNewLabel_1.setBounds(181, 21, 783, 54);
+		lblNewLabel_1.setBounds(148, 10, 783, 54);
 		panel_1.add(lblNewLabel_1);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(SystemColor.controlHighlight);
-		panel_2.setBounds(0, 94, 1071, 68);
+		panel_2.setBackground(Color.GRAY);
+		panel_2.setBounds(0, 74, 1071, 49);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -56,44 +56,44 @@ public class WelcomePage extends JFrame {
 		panel_2.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Sitka Small", Font.BOLD, 15));
-		lblNewLabel.setForeground(Color.DARK_GRAY);
+		lblNewLabel.setForeground(Color.WHITE);
 		
 		JLabel lblHelp = new JLabel("Files");
 		lblHelp.setBounds(183, 10, 63, 40);
 		panel_2.add(lblHelp);
 		lblHelp.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHelp.setForeground(Color.DARK_GRAY);
+		lblHelp.setForeground(Color.WHITE);
 		lblHelp.setFont(new Font("Sitka Small", Font.BOLD, 15));
 		
 		JLabel lblInfo = new JLabel("Info");
 		lblInfo.setBounds(100, 10, 63, 40);
 		panel_2.add(lblInfo);
 		lblInfo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblInfo.setForeground(Color.DARK_GRAY);
+		lblInfo.setForeground(Color.WHITE);
 		lblInfo.setFont(new Font("Sitka Small", Font.BOLD, 15));
 		
 		JLabel lblHome = new JLabel("Home");
 		lblHome.setBounds(27, 10, 63, 40);
 		panel_2.add(lblHome);
 		lblHome.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHome.setForeground(Color.DARK_GRAY);
+		lblHome.setForeground(Color.WHITE);
 		lblHome.setFont(new Font("Sitka Small", Font.BOLD, 15));
 		
 		JLabel label = new JLabel("Help");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.DARK_GRAY);
+		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Sitka Small", Font.BOLD, 15));
 		label.setBounds(270, 10, 63, 40);
 		panel_2.add(label);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(0, 160, 1071, 672);
+		panel_3.setBounds(0, 121, 1071, 655);
 		panel.add(panel_3);
 		panel_3.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(UIManager.getColor("Button.light"));
-		panel_4.setBounds(51, 42, 283, 247);
+		panel_4.setBounds(51, 36, 283, 247);
 		panel_3.add(panel_4);
 		panel_4.setLayout(null);
 		
@@ -107,7 +107,7 @@ public class WelcomePage extends JFrame {
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Bell MT", Font.BOLD, 24));
-		lblNewLabel_2.setBounds(41, 24, 210, 29);
+		lblNewLabel_2.setBounds(38, 10, 210, 57);
 		panel_10.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
@@ -118,12 +118,12 @@ public class WelcomePage extends JFrame {
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(UIManager.getColor("Button.light"));
-		panel_5.setBounds(394, 42, 283, 247);
+		panel_5.setBounds(394, 36, 283, 247);
 		panel_3.add(panel_5);
 		panel_5.setLayout(null);
 		
 		JPanel panel_11 = new JPanel();
-		panel_11.setBackground(new Color(51, 153, 255));
+		panel_11.setBackground(new Color(124, 77, 255));
 		panel_11.setBounds(0, 0, 283, 74);
 		panel_5.add(panel_11);
 		panel_11.setLayout(null);
@@ -139,17 +139,17 @@ public class WelcomePage extends JFrame {
 		Image image2 = new ImageIcon(this.getClass().getResource("/images/details.png")).getImage().getScaledInstance(283, 174, Image.SCALE_DEFAULT);
 		lblNewLabel_4.setIcon(new ImageIcon(image2));
 		//lblNewLabel_4.setIcon(new ImageIcon(WelcomePage.class.getResource("/images/details.png")));
-		lblNewLabel_4.setBounds(0, 72, 283, 174);
+		lblNewLabel_4.setBounds(0, 73, 283, 174);
 		panel_5.add(lblNewLabel_4);
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(UIManager.getColor("Button.light"));
-		panel_6.setBounds(738, 42, 283, 247);
+		panel_6.setBounds(738, 36, 283, 247);
 		panel_3.add(panel_6);
 		panel_6.setLayout(null);
 		
 		JPanel panel_12 = new JPanel();
-		panel_12.setBackground(new Color(51, 153, 255));
+		panel_12.setBackground(new Color(102, 187, 106));
 		panel_12.setBounds(0, 0, 283, 74);
 		panel_6.add(panel_12);
 		panel_12.setLayout(null);
@@ -170,12 +170,12 @@ public class WelcomePage extends JFrame {
 		
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(UIManager.getColor("Button.light"));
-		panel_7.setBounds(51, 348, 283, 247);
+		panel_7.setBounds(51, 342, 283, 247);
 		panel_3.add(panel_7);
 		panel_7.setLayout(null);
 		
 		JPanel panel_13 = new JPanel();
-		panel_13.setBackground(new Color(51, 153, 255));
+		panel_13.setBackground(new Color(255, 202, 40));
 		panel_13.setBounds(0, 0, 283, 74);
 		panel_7.add(panel_13);
 		panel_13.setLayout(null);
@@ -196,12 +196,12 @@ public class WelcomePage extends JFrame {
 		
 		JPanel panel_8 = new JPanel();
 		panel_8.setBackground(UIManager.getColor("Button.light"));
-		panel_8.setBounds(394, 348, 283, 247);
+		panel_8.setBounds(394, 342, 283, 247);
 		panel_3.add(panel_8);
 		panel_8.setLayout(null);
 		
 		JPanel panel_14 = new JPanel();
-		panel_14.setBackground(new Color(51, 153, 255));
+		panel_14.setBackground(new Color(0, 204, 102));
 		panel_14.setBounds(0, 0, 283, 74);
 		panel_8.add(panel_14);
 		panel_14.setLayout(null);
@@ -227,7 +227,7 @@ public class WelcomePage extends JFrame {
 		panel_9.setLayout(null);
 		
 		JPanel panel_15 = new JPanel();
-		panel_15.setBackground(new Color(51, 153, 255));
+		panel_15.setBackground(new Color(204, 51, 0));
 		panel_15.setBounds(0, 0, 283, 74);
 		panel_9.add(panel_15);
 		panel_15.setLayout(null);

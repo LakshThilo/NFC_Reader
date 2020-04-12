@@ -1,19 +1,17 @@
 package com.lak.uni.veiw;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import com.lak.uni.controller.Controller;
-import com.lak.uni.controller.Student;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import java.awt.Color;
-import javax.swing.UIManager;
+import com.lak.uni.model.Student;
+
 
 public class StudentDetail extends JFrame {
 
@@ -31,7 +29,7 @@ public class StudentDetail extends JFrame {
 		this.student = student;
 		init();
 		settingUp();
-		cleanUp();
+		
 	}
 	
 
@@ -56,8 +54,8 @@ public class StudentDetail extends JFrame {
 	private void init() {
 		
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 633, 438);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 586, 387);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -71,7 +69,7 @@ public class StudentDetail extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(30, 144, 255));
-		panel_1.setBounds(0, 0, 632, 84);
+		panel_1.setBounds(0, 0, 575, 84);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -80,12 +78,12 @@ public class StudentDetail extends JFrame {
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 28));
 		label.setBackground(Color.WHITE);
-		label.setBounds(10, 10, 576, 73);
+		label.setBounds(10, 10, 513, 64);
 		panel_1.add(label);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(UIManager.getColor("InternalFrame.borderLight"));
-		panel_2.setBounds(0, 83, 633, 354);
+		panel_2.setBounds(0, 83, 575, 275);
 		panel.add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -94,7 +92,7 @@ public class StudentDetail extends JFrame {
 		label_1.setForeground(UIManager.getColor("CheckBox.darkShadow"));
 		label_1.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		label_1.setBackground(new Color(119, 136, 153));
-		label_1.setBounds(57, 22, 212, 48);
+		label_1.setBounds(28, 22, 189, 36);
 		panel_2.add(label_1);
 		
 		JLabel label_2 = new JLabel("Name :");
@@ -102,7 +100,7 @@ public class StudentDetail extends JFrame {
 		label_2.setForeground(UIManager.getColor("CheckBox.darkShadow"));
 		label_2.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		label_2.setBackground(new Color(119, 136, 153));
-		label_2.setBounds(57, 95, 212, 48);
+		label_2.setBounds(28, 79, 189, 36);
 		panel_2.add(label_2);
 		
 		JLabel label_3 = new JLabel("Course :");
@@ -110,7 +108,7 @@ public class StudentDetail extends JFrame {
 		label_3.setForeground(UIManager.getColor("CheckBox.darkShadow"));
 		label_3.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		label_3.setBackground(new Color(119, 136, 153));
-		label_3.setBounds(57, 166, 212, 48);
+		label_3.setBounds(28, 133, 189, 36);
 		panel_2.add(label_3);
 		
 		JLabel label_4 = new JLabel("Batch :");
@@ -118,7 +116,7 @@ public class StudentDetail extends JFrame {
 		label_4.setForeground(UIManager.getColor("CheckBox.darkShadow"));
 		label_4.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		label_4.setBackground(new Color(119, 136, 153));
-		label_4.setBounds(57, 237, 212, 48);
+		label_4.setBounds(28, 193, 189, 36);
 		panel_2.add(label_4);
 		
 		batch_lbl = new JLabel("");
@@ -126,7 +124,7 @@ public class StudentDetail extends JFrame {
 		batch_lbl.setForeground(Color.BLACK);
 		batch_lbl.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		batch_lbl.setBackground(new Color(119, 136, 153));
-		batch_lbl.setBounds(324, 237, 212, 48);
+		batch_lbl.setBounds(299, 193, 189, 36);
 		panel_2.add(batch_lbl);
 		
 		course_lbl = new JLabel("");
@@ -134,7 +132,7 @@ public class StudentDetail extends JFrame {
 		course_lbl.setForeground(Color.BLACK);
 		course_lbl.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		course_lbl.setBackground(new Color(119, 136, 153));
-		course_lbl.setBounds(324, 166, 212, 48);
+		course_lbl.setBounds(299, 133, 189, 36);
 		panel_2.add(course_lbl);
 		
 		name_lbl = new JLabel("");
@@ -142,7 +140,7 @@ public class StudentDetail extends JFrame {
 		name_lbl.setForeground(Color.BLACK);
 		name_lbl.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		name_lbl.setBackground(new Color(119, 136, 153));
-		name_lbl.setBounds(324, 95, 212, 48);
+		name_lbl.setBounds(299, 79, 189, 36);
 		panel_2.add(name_lbl);
 		
 		stID_lbl = new JLabel("");
@@ -150,7 +148,7 @@ public class StudentDetail extends JFrame {
 		stID_lbl.setForeground(Color.BLACK);
 		stID_lbl.setFont(new Font("Microsoft YaHei UI Light", Font.BOLD, 16));
 		stID_lbl.setBackground(new Color(119, 136, 153));
-		stID_lbl.setBounds(324, 22, 212, 48);
+		stID_lbl.setBounds(299, 22, 189, 36);
 		panel_2.add(stID_lbl);
 		
 		setVisible(true);

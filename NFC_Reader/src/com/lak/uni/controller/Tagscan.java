@@ -1,4 +1,4 @@
-package com.lak.uni.model;
+package com.lak.uni.controller;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -10,8 +10,6 @@ import javax.smartcardio.CardTerminal;
 import javax.smartcardio.CommandAPDU;
 import javax.smartcardio.ResponseAPDU;
 import javax.smartcardio.TerminalFactory;
-
-import com.lak.uni.controller.CardDetails;
 
 public class Tagscan {
 
@@ -56,7 +54,15 @@ public class Tagscan {
 		   } 
 			
 		   System.out.println("UID: " + bin2hex(response.getData()));
-		   new CardDetails(bin2hex(response.getData())).getStudentDetails();
+		   //new CardDetails(bin2hex(response.getData())).getStudentDetails();
+		   try {
+			new CardDetails(bin2hex(response.getData())).getStudentDetails();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		   
 		   
 			
 		   // Disconnect the card

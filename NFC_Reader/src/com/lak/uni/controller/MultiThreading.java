@@ -1,4 +1,4 @@
-package com.lak.uni.model;
+package com.lak.uni.controller;
 
 import java.util.List;
 
