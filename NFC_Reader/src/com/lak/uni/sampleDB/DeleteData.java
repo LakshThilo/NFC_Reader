@@ -27,7 +27,7 @@ public class DeleteData {
 
 			st = con.createStatement();
 
-			rowsAffected = st.executeUpdate("DELETE FROM students WHERE st_UID ='C3CF5340'");
+			rowsAffected = st.executeUpdate("DELETE FROM students WHERE st_UID ='B6829B2B'");
 
 
 

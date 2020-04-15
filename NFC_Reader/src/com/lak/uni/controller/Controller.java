@@ -12,7 +12,7 @@ public class Controller {
 		
     	this.student = student;
     	new StudentDetail(student);
-    	print();
+    	//print();
     	
 	} 
     
