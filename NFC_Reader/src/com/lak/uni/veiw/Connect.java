@@ -2,9 +2,11 @@ package com.lak.uni.veiw;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 
 import com.lak.uni.controller.Controller;
 import com.lak.uni.controller.MultiThreading;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 public class Connect extends JFrame {
 
@@ -43,13 +47,15 @@ public class Connect extends JFrame {
 	 */
 	public Connect() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 572, 337);
 		contentPane = new JPanel();
+		contentPane.setBackground(UIManager.getColor("Button.disabledForeground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Start");
+		btnNewButton.setBackground(SystemColor.controlHighlight);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -63,16 +69,18 @@ public class Connect extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBounds(132, 88, 207, 56);
+		btnNewButton.setBounds(185, 124, 207, 56);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Welcome ");
+		lblNewLabel.setForeground(SystemColor.text);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(47, 13, 362, 62);
+		lblNewLabel.setBounds(99, 22, 362, 62);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnStop = new JButton("Stop");
+		btnStop.setBackground(SystemColor.controlHighlight);
 		btnStop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -84,8 +92,13 @@ public class Connect extends JFrame {
 			}
 		});
 		btnStop.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnStop.setBounds(132, 157, 207, 56);
+		btnStop.setBounds(185, 193, 207, 56);
 		contentPane.add(btnStop);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		Image image = new ImageIcon(this.getClass().getResource("/images/book2.jpg")).getImage().getScaledInstance(572, 337, Image.SCALE_DEFAULT);
+		lblNewLabel_1.setIcon(new ImageIcon(image));
+		lblNewLabel_1.setBounds(0, 0, 558, 300);
+		contentPane.add(lblNewLabel_1);
 	}
-
 }
