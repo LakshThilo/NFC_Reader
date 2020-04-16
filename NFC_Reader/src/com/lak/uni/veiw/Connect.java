@@ -19,6 +19,8 @@ import com.lak.uni.controller.MultiThreading;
 import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Connect extends JFrame {
 
@@ -35,6 +37,7 @@ public class Connect extends JFrame {
 			public void run() {
 				try {
 					frame = new Connect();
+					frame.setUndecorated(true);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +53,7 @@ public class Connect extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 572, 337);
 		contentPane = new JPanel();
-		contentPane.setBackground(UIManager.getColor("Button.disabledForeground"));
+		contentPane.setBackground(new Color(128, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -71,15 +74,8 @@ public class Connect extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBounds(177, 109, 207, 56);
+		btnNewButton.setBounds(298, 147, 207, 56);
 		contentPane.add(btnNewButton);
-		
-		JLabel lblNewLabel = new JLabel("Welcome Attendance Monitaring System");
-		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(10, 10, 538, 62);
-		contentPane.add(lblNewLabel);
 		
 		JButton btnStop = new JButton("Stop");
 		btnStop.setBackground(SystemColor.controlHighlight);
@@ -94,13 +90,48 @@ public class Connect extends JFrame {
 			}
 		});
 		btnStop.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnStop.setBounds(177, 178, 207, 56);
+		btnStop.setBounds(298, 216, 207, 56);
 		contentPane.add(btnStop);
 		
+		
+		JLabel lblNewLabel = new JLabel("Attendance M");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 26));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		lblNewLabel.setBounds(0, 44, 248, 56);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("onitaring System");
+		lblNewLabel_2.setForeground(new Color(0, 0, 0));
+		lblNewLabel_2.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 26));
+		lblNewLabel_2.setBounds(246, 44, 230, 56);
+		contentPane.add(lblNewLabel_2);
+		
 		JLabel lblNewLabel_1 = new JLabel("");
-		Image image = new ImageIcon(this.getClass().getResource("/images/book2.jpg")).getImage().getScaledInstance(572, 337, Image.SCALE_DEFAULT);
+		Image image = new ImageIcon(this.getClass().getResource("/images/book2.jpg")).getImage().getScaledInstance(258, 337, Image.SCALE_DEFAULT);
 		lblNewLabel_1.setIcon(new ImageIcon(image));
-		lblNewLabel_1.setBounds(0, 0, 558, 300);
+		lblNewLabel_1.setBounds(0, 0, 248, 337);
 		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("X");
+		lblNewLabel_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+				
+			}
+		});
+		lblNewLabel_3.setForeground(new Color(220, 20, 60));
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 23));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setBounds(533, 10, 25, 28);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel label = new JLabel("?");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 20));
+		label.setBounds(509, 10, 25, 28);
+		contentPane.add(label);
+		
 	}
 }
