@@ -20,12 +20,16 @@ import javax.swing.JTable;
 import javax.swing.JList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextField;
+import java.awt.Component;
+import javax.swing.Box;
 
 public class HomeWindow extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 	private CardLayout cardLayout;
+	private JTable table;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -65,6 +69,27 @@ public class HomeWindow extends JFrame {
 		lblNewLabel.setFont(new Font("Yu Gothic", Font.PLAIN, 40));
 		lblNewLabel.setBounds(26, 52, 717, 116);
 		panel.add(lblNewLabel);
+		
+		JLabel label_16 = new JLabel("File");
+		label_16.setHorizontalAlignment(SwingConstants.CENTER);
+		label_16.setForeground(Color.BLACK);
+		label_16.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_16.setBounds(828, 12, 40, 24);
+		panel.add(label_16);
+		
+		JLabel label_17 = new JLabel("Help");
+		label_17.setHorizontalAlignment(SwingConstants.CENTER);
+		label_17.setForeground(Color.BLACK);
+		label_17.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_17.setBounds(874, 12, 46, 24);
+		panel.add(label_17);
+		
+		JLabel label_19 = new JLabel("Admin");
+		label_19.setHorizontalAlignment(SwingConstants.CENTER);
+		label_19.setForeground(new Color(255, 99, 71));
+		label_19.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_19.setBounds(930, 12, 54, 24);
+		panel.add(label_19);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.addMouseListener(new MouseAdapter() {
@@ -295,6 +320,35 @@ public class HomeWindow extends JFrame {
 		panel_16.setBackground(UIManager.getColor("Button.light"));
 		panel_16.setBounds(201, 0, 803, 54);
 		dashboard_panel.add(panel_16);
+		panel_16.setLayout(null);
+		
+		JLabel label_14 = new JLabel("University of Wolverhampton");
+		label_14.setHorizontalAlignment(SwingConstants.CENTER);
+		label_14.setForeground(SystemColor.textInactiveText);
+		label_14.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 20));
+		label_14.setBounds(10, 10, 340, 24);
+		panel_16.add(label_14);
+		
+		JLabel lblNewLabel_9 = new JLabel("Admin");
+		lblNewLabel_9.setForeground(new Color(255, 99, 71));
+		lblNewLabel_9.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_9.setBounds(733, 12, 60, 24);
+		panel_16.add(lblNewLabel_9);
+		
+		JLabel lblFile = new JLabel("Help");
+		lblFile.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFile.setForeground(new Color(0, 0, 0));
+		lblFile.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		lblFile.setBounds(689, 12, 46, 24);
+		panel_16.add(lblFile);
+		
+		JLabel label_15 = new JLabel("File");
+		label_15.setHorizontalAlignment(SwingConstants.CENTER);
+		label_15.setForeground(Color.BLACK);
+		label_15.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_15.setBounds(650, 12, 40, 24);
+		panel_16.add(label_15);
 		
 		JPanel panel_17 = new JPanel();
 		panel_17.setBounds(201, 237, 803, 437);
@@ -305,10 +359,56 @@ public class HomeWindow extends JFrame {
 		panel_17.add(panel_18, "name_25213413806800");
 		panel_18.setLayout(null);
 		
+		JPanel panel_41 = new JPanel();
+		panel_41.setBackground(SystemColor.textHighlight);
+		panel_41.setBounds(27, 21, 751, 22);
+		panel_18.add(panel_41);
+		
 		table = new JTable();
-		table.setBackground(new Color(100, 149, 237));
-		table.setBounds(41, 79, 725, 318);
+		table.setBounds(71, 98, 674, 317);
 		panel_18.add(table);
+		
+		JPanel panel_42 = new JPanel();
+		panel_42.setBackground(new Color(128, 128, 128));
+		panel_42.setBounds(71, 70, 674, 28);
+		panel_18.add(panel_42);
+		panel_42.setLayout(null);
+		
+		JLabel lblNewLabel_10 = new JLabel("U I D");
+		lblNewLabel_10.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblNewLabel_10.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_10.setBounds(0, 0, 110, 28);
+		panel_42.add(lblNewLabel_10);
+		
+		JLabel lblCourse = new JLabel("I D");
+		lblCourse.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCourse.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblCourse.setBounds(110, 0, 110, 28);
+		panel_42.add(lblCourse);
+		
+		JLabel lblCourse_1 = new JLabel("NAME");
+		lblCourse_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCourse_1.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblCourse_1.setBounds(233, 0, 110, 28);
+		panel_42.add(lblCourse_1);
+		
+		JLabel lblYear = new JLabel("COURSE");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblYear.setBounds(335, 0, 110, 28);
+		panel_42.add(lblYear);
+		
+		JLabel lblBatch = new JLabel("BATCH");
+		lblBatch.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBatch.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblBatch.setBounds(446, 0, 110, 28);
+		panel_42.add(lblBatch);
+		
+		JLabel lblYear_1 = new JLabel("YEAR");
+		lblYear_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear_1.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
+		lblYear_1.setBounds(559, 0, 115, 28);
+		panel_42.add(lblYear_1);
 		
 		JPanel panel_19 = new JPanel();
 		panel_17.add(panel_19, "name_25216298040500");
@@ -356,6 +456,13 @@ public class HomeWindow extends JFrame {
 		panel_20.add(panel_22);
 		
 		JLabel lblSearchStudentDetals = new JLabel("Add Student ");
+		lblSearchStudentDetals.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				new StudentRegistration();
+			}
+		});
 		lblSearchStudentDetals.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSearchStudentDetals.setForeground(Color.WHITE);
 		lblSearchStudentDetals.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
@@ -416,18 +523,167 @@ public class HomeWindow extends JFrame {
 		JLabel label_20 = new JLabel("Student Attendance System");
 		label_20.setForeground(Color.WHITE);
 		label_20.setFont(new Font("Yu Gothic UI Semilight", Font.PLAIN, 40));
-		label_20.setBounds(41, 33, 637, 95);
+		label_20.setBounds(41, 27, 637, 95);
 		panel_26.add(label_20);
 		
 		JPanel panel_27 = new JPanel();
-		panel_27.setBackground(SystemColor.controlHighlight);
+		panel_27.setBackground(SystemColor.scrollbar);
 		panel_27.setBounds(201, 0, 803, 54);
 		panel_2.add(panel_27);
+		panel_27.setLayout(null);
+		
+		
+		JLabel lblNewLabel_8 = new JLabel("University of Wolverhampton");
+		lblNewLabel_8.setForeground(SystemColor.textInactiveText);
+		lblNewLabel_8.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 20));
+		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_8.setBounds(23, 14, 340, 24);
+		panel_27.add(lblNewLabel_8);
+		
+		JLabel label_22 = new JLabel("File");
+		label_22.setHorizontalAlignment(SwingConstants.CENTER);
+		label_22.setForeground(Color.BLACK);
+		label_22.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_22.setBounds(650, 14, 40, 24);
+		panel_27.add(label_22);
+		
+		JLabel label_23 = new JLabel("Help");
+		label_23.setHorizontalAlignment(SwingConstants.CENTER);
+		label_23.setForeground(Color.BLACK);
+		label_23.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_23.setBounds(689, 14, 46, 24);
+		panel_27.add(label_23);
+		
+		JLabel label_24 = new JLabel("Admin");
+		label_24.setHorizontalAlignment(SwingConstants.CENTER);
+		label_24.setForeground(new Color(255, 99, 71));
+		label_24.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
+		label_24.setBounds(733, 14, 60, 24);
+		panel_27.add(label_24);
 		
 		JPanel panel_28 = new JPanel();
 		panel_28.setBounds(201, 237, 803, 437);
 		panel_2.add(panel_28);
-		panel_28.setLayout(new CardLayout(0, 0));
+		panel_28.setLayout(null);
+		
+		JPanel panel_29 = new JPanel();
+		panel_29.setBackground(SystemColor.textHighlightText);
+		panel_29.setBounds(65, 48, 255, 252);
+		panel_28.add(panel_29);
+		panel_29.setLayout(null);
+		
+		JPanel panel_36 = new JPanel();
+		panel_36.setLayout(null);
+		panel_36.setBackground(new Color(49, 27, 146));
+		panel_36.setBounds(0, 0, 255, 52);
+		panel_29.add(panel_36);
+		
+		JLabel label_9 = new JLabel("Number of Students");
+		label_9.setHorizontalAlignment(SwingConstants.CENTER);
+		label_9.setForeground(Color.WHITE);
+		label_9.setFont(new Font("Yu Gothic UI Semilight", Font.PLAIN, 18));
+		label_9.setBackground(new Color(169, 169, 169));
+		label_9.setBounds(41, 10, 178, 40);
+		panel_36.add(label_9);
+		
+		JPanel panel_37 = new JPanel();
+		panel_37.setBackground(SystemColor.controlHighlight);
+		panel_37.setBounds(0, 54, 255, 198);
+		panel_29.add(panel_37);
+		panel_37.setLayout(null);
+		
+		JPanel panel_39 = new JPanel();
+		panel_39.setBackground(SystemColor.textInactiveText);
+		panel_39.setBounds(129, 24, 4, 146);
+		panel_37.add(panel_39);
+		
+		JLabel lblNewLabel_7 = new JLabel("45");
+		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 25));
+		lblNewLabel_7.setBounds(22, 55, 82, 70);
+		panel_37.add(lblNewLabel_7);
+		
+		JLabel label_11 = new JLabel("30");
+		label_11.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 42));
+		label_11.setHorizontalAlignment(SwingConstants.CENTER);
+		label_11.setBounds(143, 55, 82, 70);
+		panel_37.add(label_11);
+		
+		JPanel panel_30 = new JPanel();
+		panel_30.setBackground(new Color(124, 77, 255));
+		panel_30.setBounds(65, 48, 255, 6);
+		panel_28.add(panel_30);
+		
+		JPanel panel_31 = new JPanel();
+		panel_31.setBackground(new Color(124, 77, 255));
+		panel_31.setBounds(321, 48, 6, 252);
+		panel_28.add(panel_31);
+		
+		JPanel panel_32 = new JPanel();
+		panel_32.setBackground(new Color(124, 77, 255));
+		panel_32.setBounds(447, 127, 255, 6);
+		panel_28.add(panel_32);
+		
+		JPanel panel_33 = new JPanel();
+		panel_33.setBackground(Color.WHITE);
+		panel_33.setBounds(447, 129, 255, 252);
+		panel_28.add(panel_33);
+		panel_33.setLayout(null);
+		
+		JPanel panel_35 = new JPanel();
+		panel_35.setBackground(new Color(49, 27, 146));
+		panel_35.setBounds(0, 0, 266, 52);
+		panel_33.add(panel_35);
+		panel_35.setLayout(null);
+		
+		JLabel lblNumberOfStudents = new JLabel("Marks %");
+		lblNumberOfStudents.setForeground(new Color(255, 255, 255));
+		lblNumberOfStudents.setBounds(41, 10, 178, 40);
+		panel_35.add(lblNumberOfStudents);
+		lblNumberOfStudents.setBackground(new Color(169, 169, 169));
+		lblNumberOfStudents.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNumberOfStudents.setFont(new Font("Yu Gothic UI Semilight", Font.PLAIN, 18));
+		
+		JPanel panel_38 = new JPanel();
+		panel_38.setBackground(SystemColor.controlHighlight);
+		panel_38.setBounds(0, 53, 266, 199);
+		panel_33.add(panel_38);
+		panel_38.setLayout(null);
+		
+		JPanel panel_40 = new JPanel();
+		panel_40.setBackground(SystemColor.textInactiveText);
+		panel_40.setBounds(123, 29, 4, 146);
+		panel_38.add(panel_40);
+		
+		JLabel label_12 = new JLabel("95%");
+		label_12.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 25));
+		label_12.setHorizontalAlignment(SwingConstants.CENTER);
+		label_12.setBounds(26, 53, 82, 70);
+		panel_38.add(label_12);
+		
+		JLabel label_13 = new JLabel("70%");
+		label_13.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 38));
+		label_13.setHorizontalAlignment(SwingConstants.CENTER);
+		label_13.setBounds(149, 53, 82, 70);
+		panel_38.add(label_13);
+		
+		JPanel panel_34 = new JPanel();
+		panel_34.setBackground(new Color(124, 77, 255));
+		panel_34.setBounds(443, 129, 6, 252);
+		panel_28.add(panel_34);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBackground(new Color(255, 255, 255));
+		textField.setBounds(371, 10, 325, 34);
+		panel_28.add(textField);
+		
+		JLabel label_21 = new JLabel("");
+		Image image6 = new ImageIcon(this.getClass().getResource("/images/search6.png")).getImage().getScaledInstance(28, 24, Image.SCALE_DEFAULT);
+		label_21.setIcon(new ImageIcon(image6));
+		label_21.setBackground(SystemColor.activeCaptionBorder);
+		label_21.setBounds(704, 10, 38, 34);
+		panel_28.add(label_21);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3, "name_17888642815600");

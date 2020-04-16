@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.SystemColor;
 
 public class StudentRegistration extends JFrame {
 
@@ -45,7 +46,7 @@ public class StudentRegistration extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(UIManager.getColor("Button.shadow"));
+		panel.setBackground(new Color(30, 144, 255));
 		panel.setBounds(0, 65, 802, 539);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -72,6 +73,7 @@ public class StudentRegistration extends JFrame {
 		panel.add(lblCourseId);
 		
 		JLabel lblCourseName = new JLabel("Course Name");
+		lblCourseName.setBackground(UIManager.getColor("Tree.selectionBackground"));
 		lblCourseName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCourseName.setForeground(Color.WHITE);
 		lblCourseName.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
@@ -86,7 +88,7 @@ public class StudentRegistration extends JFrame {
 		panel.add(lblYear);
 		
 		JButton btnNewButton = new JButton("Submit");
-		btnNewButton.setBackground(new Color(239, 108, 0));
+		btnNewButton.setBackground(SystemColor.textHighlight);
 		btnNewButton.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		btnNewButton.setBounds(63, 459, 665, 47);
 		panel.add(btnNewButton);
@@ -122,7 +124,7 @@ public class StudentRegistration extends JFrame {
 		panel.add(textField_4);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(UIManager.getColor("Button.darkShadow"));
+		panel_1.setBackground(new Color(0, 120, 215));
 		panel_1.setBounds(0, 0, 802, 67);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);

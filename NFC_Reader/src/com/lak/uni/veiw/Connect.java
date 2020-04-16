@@ -53,12 +53,13 @@ public class Connect extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 572, 337);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(128, 128, 128));
+		contentPane.setBackground(new Color(169, 169, 169));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Start");
+		btnNewButton.setForeground(new Color(255, 99, 71));
 		btnNewButton.setBackground(SystemColor.controlHighlight);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -124,13 +125,13 @@ public class Connect extends JFrame {
 		lblNewLabel_3.setForeground(new Color(220, 20, 60));
 		lblNewLabel_3.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 23));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(533, 10, 25, 28);
+		lblNewLabel_3.setBounds(533, 10, 25, 19);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel label = new JLabel("?");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 20));
-		label.setBounds(509, 10, 25, 28);
+		label.setBounds(509, 10, 25, 19);
 		contentPane.add(label);
 		
 	}

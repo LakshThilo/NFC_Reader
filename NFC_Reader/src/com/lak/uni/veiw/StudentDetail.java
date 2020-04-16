@@ -31,7 +31,9 @@ public class StudentDetail extends JFrame {
 		settingUp();
 		
 	}
-	
+	public StudentDetail() {
+		
+	}
 
 	private void cleanUp() {
 		
