@@ -18,6 +18,7 @@ import com.lak.uni.controller.Controller;
 import com.lak.uni.controller.MultiThreading;
 import javax.swing.UIManager;
 import java.awt.SystemColor;
+import java.awt.Color;
 
 public class Connect extends JFrame {
 
@@ -61,22 +62,23 @@ public class Connect extends JFrame {
 				
 				mt = new MultiThreading();
 				mt.start();
-				//new MainFrame();
-				new WelcomePage();
+				//new WelcomePage();
+				new HomeWindow(); 
+				
 				frame.setVisible(false);
 			
 				
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBounds(185, 124, 207, 56);
+		btnNewButton.setBounds(177, 109, 207, 56);
 		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("Welcome ");
-		lblNewLabel.setForeground(SystemColor.text);
+		JLabel lblNewLabel = new JLabel("Welcome Attendance Monitaring System");
+		lblNewLabel.setForeground(new Color(0, 0, 0));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(99, 22, 362, 62);
+		lblNewLabel.setBounds(10, 10, 538, 62);
 		contentPane.add(lblNewLabel);
 		
 		JButton btnStop = new JButton("Stop");
@@ -92,7 +94,7 @@ public class Connect extends JFrame {
 			}
 		});
 		btnStop.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnStop.setBounds(185, 193, 207, 56);
+		btnStop.setBounds(177, 178, 207, 56);
 		contentPane.add(btnStop);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
