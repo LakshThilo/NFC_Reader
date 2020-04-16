@@ -619,11 +619,6 @@ public class HomeWindow extends JFrame {
 		panel_31.setBounds(321, 48, 6, 252);
 		panel_28.add(panel_31);
 		
-		JPanel panel_32 = new JPanel();
-		panel_32.setBackground(new Color(124, 77, 255));
-		panel_32.setBounds(447, 127, 255, 6);
-		panel_28.add(panel_32);
-		
 		JPanel panel_33 = new JPanel();
 		panel_33.setBackground(Color.WHITE);
 		panel_33.setBounds(447, 129, 255, 252);
@@ -638,7 +633,7 @@ public class HomeWindow extends JFrame {
 		
 		JLabel lblNumberOfStudents = new JLabel("Marks %");
 		lblNumberOfStudents.setForeground(new Color(255, 255, 255));
-		lblNumberOfStudents.setBounds(41, 10, 178, 40);
+		lblNumberOfStudents.setBounds(44, 10, 178, 40);
 		panel_35.add(lblNumberOfStudents);
 		lblNumberOfStudents.setBackground(new Color(169, 169, 169));
 		lblNumberOfStudents.setHorizontalAlignment(SwingConstants.CENTER);
@@ -646,7 +641,7 @@ public class HomeWindow extends JFrame {
 		
 		JPanel panel_38 = new JPanel();
 		panel_38.setBackground(SystemColor.controlHighlight);
-		panel_38.setBounds(0, 53, 266, 199);
+		panel_38.setBounds(0, 39, 266, 213);
 		panel_33.add(panel_38);
 		panel_38.setLayout(null);
 		
