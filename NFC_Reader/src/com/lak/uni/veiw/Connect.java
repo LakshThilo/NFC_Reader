@@ -37,7 +37,7 @@ public class Connect extends JFrame {
 			public void run() {
 				try {
 					frame = new Connect();
-					frame.setUndecorated(true);
+					//frame.setUndecorated(true);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,6 +49,8 @@ public class Connect extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	
+	
 	public Connect() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 572, 337);
@@ -75,7 +77,7 @@ public class Connect extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnNewButton.setBounds(298, 147, 207, 56);
+		btnNewButton.setBounds(301, 113, 207, 56);
 		contentPane.add(btnNewButton);
 		
 		JButton btnStop = new JButton("Stop");
@@ -91,7 +93,7 @@ public class Connect extends JFrame {
 			}
 		});
 		btnStop.setFont(new Font("Tahoma", Font.BOLD, 15));
-		btnStop.setBounds(298, 216, 207, 56);
+		btnStop.setBounds(301, 182, 207, 56);
 		contentPane.add(btnStop);
 		
 		
@@ -99,19 +101,19 @@ public class Connect extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 26));
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setBounds(0, 44, 248, 56);
+		lblNewLabel.setBounds(0, 20, 248, 56);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("onitaring System");
 		lblNewLabel_2.setForeground(new Color(0, 0, 0));
 		lblNewLabel_2.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 26));
-		lblNewLabel_2.setBounds(246, 44, 230, 56);
+		lblNewLabel_2.setBounds(246, 20, 230, 56);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		Image image = new ImageIcon(this.getClass().getResource("/images/book2.jpg")).getImage().getScaledInstance(258, 337, Image.SCALE_DEFAULT);
 		lblNewLabel_1.setIcon(new ImageIcon(image));
-		lblNewLabel_1.setBounds(0, 0, 248, 337);
+		lblNewLabel_1.setBounds(0, 0, 248, 300);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("X");
@@ -123,15 +125,15 @@ public class Connect extends JFrame {
 			}
 		});
 		lblNewLabel_3.setForeground(new Color(220, 20, 60));
-		lblNewLabel_3.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 23));
+		lblNewLabel_3.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(533, 10, 25, 19);
+		lblNewLabel_3.setBounds(533, 0, 25, 19);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel label = new JLabel("?");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 20));
-		label.setBounds(509, 10, 25, 19);
+		label.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 18));
+		label.setBounds(509, 0, 25, 19);
 		contentPane.add(label);
 		
 	}

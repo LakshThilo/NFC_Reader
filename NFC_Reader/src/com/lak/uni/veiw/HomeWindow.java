@@ -6,6 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.lak.uni.model.DbConnector;
+import com.lak.uni.model.Student;
+
+import net.proteanit.sql.DbUtils;
+
 import java.awt.CardLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -20,9 +26,15 @@ import javax.swing.JTable;
 import javax.swing.JList;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.swing.JTextField;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.JScrollPane;
 
 public class HomeWindow extends JFrame {
 
@@ -30,6 +42,7 @@ public class HomeWindow extends JFrame {
 	private CardLayout cardLayout;
 	private JTable table;
 	private JTextField textField;
+	private Connection connect = null;
 
 	/**
 	 * Launch the application.
@@ -44,6 +57,8 @@ public class HomeWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public HomeWindow() {
+		
+		connect = DbConnector.getDbConnector();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1028, 721);
 		contentPane = new JPanel();
@@ -220,6 +235,35 @@ public class HomeWindow extends JFrame {
 		panel_12.setLayout(null);
 		
 		JLabel lblNewLabel_3 = new JLabel("Student Details");
+		lblNewLabel_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				try {
+					
+					String query = "select * from students";
+					PreparedStatement pst = connect.prepareStatement(query);
+					ResultSet rs = pst.executeQuery();
+					/*
+					 * while (rs.next()) { Student student = new
+					 * Student(rs.getString("st_UID"),rs.getString("st_ID"),rs.getString("st_Name"),
+					 * rs.getString("st_course"),rs.getString("st_batch"));
+					 * System.out.println(student);
+					 * 
+					 * }
+					 */
+					
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+				} catch (Exception e2) {
+
+
+				}
+				
+				
+				
+			}
+		});
 		lblNewLabel_3.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
@@ -236,7 +280,25 @@ public class HomeWindow extends JFrame {
 		panel_10.add(panel_13);
 		panel_13.setLayout(null);
 		
-		JLabel lblCourseDetails = new JLabel("Course Details");
+		JLabel lblCourseDetails = new JLabel("Attendance\r\n");
+		lblCourseDetails.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				
+				try {
+					String query = "select * from attendance";
+					PreparedStatement pst;
+					pst = connect.prepareStatement(query);
+					ResultSet rs = pst.executeQuery();
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		lblCourseDetails.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCourseDetails.setForeground(new Color(255, 255, 255));
 		lblCourseDetails.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
@@ -253,7 +315,7 @@ public class HomeWindow extends JFrame {
 		panel_10.add(panel_14);
 		panel_14.setLayout(null);
 		
-		JLabel lblMarks = new JLabel("Marks");
+		JLabel lblMarks = new JLabel("Course Details");
 		lblMarks.setForeground(new Color(255, 255, 255));
 		lblMarks.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
 		lblMarks.setHorizontalAlignment(SwingConstants.CENTER);
@@ -270,7 +332,7 @@ public class HomeWindow extends JFrame {
 		panel_10.add(panel_15);
 		panel_15.setLayout(null);
 		
-		JLabel lblAttendance = new JLabel("Attendance");
+		JLabel lblAttendance = new JLabel("Absence");
 		lblAttendance.setForeground(new Color(255, 255, 255));
 		lblAttendance.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
 		lblAttendance.setHorizontalAlignment(SwingConstants.CENTER);
@@ -364,9 +426,12 @@ public class HomeWindow extends JFrame {
 		panel_41.setBounds(27, 21, 751, 22);
 		panel_18.add(panel_41);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(71, 98, 674, 317);
+		panel_18.add(scrollPane);
+		
 		table = new JTable();
-		table.setBounds(71, 98, 674, 317);
-		panel_18.add(table);
+		scrollPane.setViewportView(table);
 		
 		JPanel panel_42 = new JPanel();
 		panel_42.setBackground(new Color(128, 128, 128));
@@ -383,32 +448,26 @@ public class HomeWindow extends JFrame {
 		JLabel lblCourse = new JLabel("I D");
 		lblCourse.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCourse.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
-		lblCourse.setBounds(110, 0, 110, 28);
+		lblCourse.setBounds(136, 0, 110, 28);
 		panel_42.add(lblCourse);
 		
 		JLabel lblCourse_1 = new JLabel("NAME");
 		lblCourse_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCourse_1.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
-		lblCourse_1.setBounds(233, 0, 110, 28);
+		lblCourse_1.setBounds(268, 0, 110, 28);
 		panel_42.add(lblCourse_1);
 		
 		JLabel lblYear = new JLabel("COURSE");
 		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
 		lblYear.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
-		lblYear.setBounds(335, 0, 110, 28);
+		lblYear.setBounds(408, 0, 110, 28);
 		panel_42.add(lblYear);
 		
 		JLabel lblBatch = new JLabel("BATCH");
 		lblBatch.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBatch.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
-		lblBatch.setBounds(446, 0, 110, 28);
+		lblBatch.setBounds(564, 0, 110, 28);
 		panel_42.add(lblBatch);
-		
-		JLabel lblYear_1 = new JLabel("YEAR");
-		lblYear_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYear_1.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 10));
-		lblYear_1.setBounds(559, 0, 115, 28);
-		panel_42.add(lblYear_1);
 		
 		JPanel panel_19 = new JPanel();
 		panel_17.add(panel_19, "name_25216298040500");
@@ -568,14 +627,14 @@ public class HomeWindow extends JFrame {
 		
 		JPanel panel_29 = new JPanel();
 		panel_29.setBackground(SystemColor.textHighlightText);
-		panel_29.setBounds(65, 48, 255, 252);
+		panel_29.setBounds(54, 48, 266, 252);
 		panel_28.add(panel_29);
 		panel_29.setLayout(null);
 		
 		JPanel panel_36 = new JPanel();
 		panel_36.setLayout(null);
 		panel_36.setBackground(new Color(49, 27, 146));
-		panel_36.setBounds(0, 0, 255, 52);
+		panel_36.setBounds(0, 0, 266, 52);
 		panel_29.add(panel_36);
 		
 		JLabel label_9 = new JLabel("Number of Students");
@@ -588,7 +647,7 @@ public class HomeWindow extends JFrame {
 		
 		JPanel panel_37 = new JPanel();
 		panel_37.setBackground(SystemColor.controlHighlight);
-		panel_37.setBounds(0, 54, 255, 198);
+		panel_37.setBounds(0, 54, 266, 198);
 		panel_29.add(panel_37);
 		panel_37.setLayout(null);
 		
@@ -621,13 +680,13 @@ public class HomeWindow extends JFrame {
 		
 		JPanel panel_33 = new JPanel();
 		panel_33.setBackground(Color.WHITE);
-		panel_33.setBounds(447, 129, 255, 252);
+		panel_33.setBounds(447, 129, 283, 252);
 		panel_28.add(panel_33);
 		panel_33.setLayout(null);
 		
 		JPanel panel_35 = new JPanel();
 		panel_35.setBackground(new Color(49, 27, 146));
-		panel_35.setBounds(0, 0, 266, 52);
+		panel_35.setBounds(0, 0, 294, 52);
 		panel_33.add(panel_35);
 		panel_35.setLayout(null);
 		
@@ -641,13 +700,13 @@ public class HomeWindow extends JFrame {
 		
 		JPanel panel_38 = new JPanel();
 		panel_38.setBackground(SystemColor.controlHighlight);
-		panel_38.setBounds(0, 39, 266, 213);
+		panel_38.setBounds(0, 53, 283, 199);
 		panel_33.add(panel_38);
 		panel_38.setLayout(null);
 		
 		JPanel panel_40 = new JPanel();
 		panel_40.setBackground(SystemColor.textInactiveText);
-		panel_40.setBounds(123, 29, 4, 146);
+		panel_40.setBounds(135, 29, 4, 146);
 		panel_38.add(panel_40);
 		
 		JLabel label_12 = new JLabel("95%");
@@ -659,7 +718,7 @@ public class HomeWindow extends JFrame {
 		JLabel label_13 = new JLabel("70%");
 		label_13.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 38));
 		label_13.setHorizontalAlignment(SwingConstants.CENTER);
-		label_13.setBounds(149, 53, 82, 70);
+		label_13.setBounds(162, 47, 82, 70);
 		panel_38.add(label_13);
 		
 		JPanel panel_34 = new JPanel();

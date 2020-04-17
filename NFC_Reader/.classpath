@@ -15,5 +15,6 @@
 	<classpathentry exported="true" kind="lib" path="G:/eclipse/eclipse-64/jdbc-drivers/ojdbc10-full/simplefan.jar"/>
 	<classpathentry exported="true" kind="lib" path="G:/eclipse/eclipse-64/jdbc-drivers/ojdbc10-full/ucp.jar"/>
 	<classpathentry exported="true" kind="lib" path="G:/eclipse/eclipse-64/jdbc-drivers/ojdbc10-full/xdb.jar"/>
+	<classpathentry kind="lib" path="G:/eclipse/eclipse-64/jdbc-drivers/ojdbc10-full/rs2xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

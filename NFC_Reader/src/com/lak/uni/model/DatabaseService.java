@@ -131,6 +131,43 @@ public class DatabaseService {
 		return numberOfRowAffected;
 	}
 	
+	//////////////////////////////////////
+	public int insertDataToAttendance(Student student) throws SQLException {
+		
+		int numberOfRowAffected = 0;
+		
+		try {
+
+			con = DriverManager.getConnection(dbUrl,user,pass);
+		
+			st = con.prepareStatement("INSERT INTO Attendance(st_UID,st_Id,st_Name,st_course,st_batch) VALUES (?, ?, ?, ?, ?)");
+			st.setString(1, student.getUID());
+			st.setString(2, student.getStId());
+			st.setString(3, student.getName());
+			st.setString(4, student.getCourse());
+			st.setString(5, student.getBatch());
+			
+			rowsAffected = st.executeUpdate();
+
+			System.out.println("Rows Inserted: "+rowsAffected);
+
+
+
+		} catch (SQLException e) {
+			System.out.println("Connection Fail");
+			e.printStackTrace();
+
+		}finally {
+
+			st.close();
+			con.close();
+
+
+		}
+		
+		
+		return numberOfRowAffected;
+	}
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

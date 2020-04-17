@@ -31,11 +31,15 @@ public class InsertData {
 			rowsAffected = st.executeUpdate("INSERT INTO Students(st_UID,st_Id,st_Name,st_course,st_batch)\r\n" + 
 					"VALUES ('C3CF5340','2','Thilo','Nurshing','19/20')");
 			
-			rowsAffected = st.executeUpdate("INSERT INTO Students(st_UID,st_Id,st_Name,st_course,st_batch)\r\n" + 
-					"VALUES ('D604B22B','3','david','network','19/20')");
-			
-			rowsAffected = st.executeUpdate("INSERT INTO Students(st_UID,st_Id,st_Name,st_course,st_batch)\r\n" + 
-					"VALUES ('B3BADA40','4','Darshi','Helth Care','19/20')");
+			/*
+			 * rowsAffected = st.
+			 * executeUpdate("INSERT INTO Students(st_UID,st_Id,st_Name,st_course,st_batch)\r\n"
+			 * + "VALUES ('D604B22B','3','david','network','19/20')");
+			 * 
+			 * rowsAffected = st.
+			 * executeUpdate("INSERT INTO Students(st_UID,st_Id,st_Name,st_course,st_batch)\r\n"
+			 * + "VALUES ('B3BADA40','4','Darshi','Helth Care','19/20')");
+			 */
 
 
 			System.out.println("Rows Affected: "+rowsAffected);

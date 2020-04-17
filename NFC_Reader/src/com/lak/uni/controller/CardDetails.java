@@ -30,6 +30,7 @@ public class CardDetails
 
 			student = service.getStudent(UID);
 			studenetList.addStudents(student);
+
 			if(student == null) {
 
 				System.out.println("Record not found");
@@ -38,7 +39,7 @@ public class CardDetails
 				 switch (n)
 				 {
 					 case 0:
-						 new StudentRegistration();
+						new StudentRegistration(UID);
 					 	break;
 					 case 1:
 						 break;
@@ -46,9 +47,10 @@ public class CardDetails
 					 	break;
 				 }
 			}else {
-
-
+				
 				new Controller(student);
+				service.insertDataToAttendance(student);
+				
 
 			}
 
