@@ -30,6 +30,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.swing.JTextField;
 import java.awt.Component;
@@ -58,7 +59,9 @@ public class HomeWindow extends JFrame {
 	 */
 	public HomeWindow() {
 		
+
 		connect = DbConnector.getDbConnector();
+		DbConnector.deleteDBdata();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1028, 721);
 		contentPane = new JPanel();

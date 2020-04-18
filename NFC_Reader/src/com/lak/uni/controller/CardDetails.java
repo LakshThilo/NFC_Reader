@@ -50,8 +50,8 @@ public class CardDetails
 			}else {
 				
 				new Controller(student);
-				//service.insertDataToAttendance(student);
-				WritingToFile.writeToFile();
+				service.insertDataToAttendance(student);
+				//WritingToFile.writeToFile();
 
 			}
 
