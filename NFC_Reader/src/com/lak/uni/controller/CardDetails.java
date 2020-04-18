@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import com.lak.uni.model.DatabaseService;
 import com.lak.uni.model.StudenetList;
 import com.lak.uni.model.Student;
-import com.lak.uni.model.WritingToFile;
+import com.lak.uni.model.FileHandler;
 import com.lak.uni.veiw.StudentRegistration;
 
 import javax.swing.*;
@@ -51,7 +51,7 @@ public class CardDetails
 				
 				new Controller(student);
 				service.insertDataToAttendance(student);
-				//WritingToFile.writeToFile();
+				FileHandler.writeToFile();
 
 			}
 

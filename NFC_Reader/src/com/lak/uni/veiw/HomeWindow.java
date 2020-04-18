@@ -603,6 +603,13 @@ public class HomeWindow extends JFrame {
 		panel_27.add(lblNewLabel_8);
 		
 		JLabel label_22 = new JLabel("File");
+		label_22.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				
+			}
+		});
 		label_22.setHorizontalAlignment(SwingConstants.CENTER);
 		label_22.setForeground(Color.BLACK);
 		label_22.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));

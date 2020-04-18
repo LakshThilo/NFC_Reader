@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class WritingToFile {
+public class FileHandler {
 
 	private static ArrayList<Student> students;
 	
-	public WritingToFile() {
+	public FileHandler() {
 		
 		//writeToFile();
 		

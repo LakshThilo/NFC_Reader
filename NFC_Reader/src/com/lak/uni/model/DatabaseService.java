@@ -312,7 +312,7 @@ public class DatabaseService {
 			con = DriverManager.getConnection(dbUrl,user,pass);
 			
 			st = con.createStatement();
-			rs = st.executeQuery("select * from students");
+			rs = st.executeQuery("select * from attendance");
 			
 			while (rs.next()) {
 				
