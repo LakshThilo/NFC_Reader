@@ -132,6 +132,7 @@ public class DatabaseService {
 	}
 	
 	//////////////////////////////////////
+	
 	public int insertDataToAttendance(Student student) throws SQLException {
 		
 		int numberOfRowAffected = 0;
@@ -264,22 +265,16 @@ public class DatabaseService {
 	public ArrayList<Student> readAllData() throws SQLException{
 		
 		studentList = new ArrayList<Student>();
-		/*String dbUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
-		String user = "C##DB";
-		String pass = "admin";*/
-
+	
 		Connection con = null;
 		Statement st = null;
 		ResultSet rs = null;
-
 
 		try {
 
 			con = DriverManager.getConnection(dbUrl,user,pass);
 			//System.out.println("Connection successful "+dbUrl + "  user "+ user +"  pass "+ pass);
-
 			st = con.createStatement();
-			
 			rs = st.executeQuery("select * from students");
 			
 			while (rs.next()) {
@@ -287,22 +282,55 @@ public class DatabaseService {
 				//System.out.println("Student UID: "+ rs.getString("st_UID")+" Student ID:"+rs.getString("st_ID")+"   Name:"+rs.getString("st_Name")+"   Course:"+rs.getString("st_course")+"   Batch:"+rs.getString("st_batch"));
 				student = new Student(rs.getString("st_UID"),rs.getString("st_ID"),rs.getString("st_Name"),rs.getString("st_course"),rs.getString("st_batch"));
 				studentList.add(student);
-				
+			
 			}
-
-
 
 		} catch (SQLException e) {
 			System.out.println("Connection Fail");
 			e.printStackTrace();
-
 		}finally {
 
 			st.close();
 			con.close();
 
 		}		
+	
+		return studentList;
+	}
+	
+	public static ArrayList<Student> readAllDataFromAttendance() throws SQLException{
 		
+		ArrayList studentList = new ArrayList<Student>();
+		Student student;
+	
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+
+		try {
+
+			con = DriverManager.getConnection(dbUrl,user,pass);
+			
+			st = con.createStatement();
+			rs = st.executeQuery("select * from students");
+			
+			while (rs.next()) {
+				
+				student = new Student(rs.getString("st_UID"),rs.getString("st_ID"),rs.getString("st_Name"),rs.getString("st_course"),rs.getString("st_batch"));
+				studentList.add(student);
+			
+			}
+
+		} catch (SQLException e) {
+			System.out.println("Connection Fail");
+			e.printStackTrace();
+		}finally {
+
+			st.close();
+			con.close();
+
+		}		
+	
 		return studentList;
 	}
 
