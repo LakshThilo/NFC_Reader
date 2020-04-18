@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.lak.uni.model.DbConnector;
+import com.lak.uni.model.FileHandler;
 import com.lak.uni.model.Student;
 
 import net.proteanit.sql.DbUtils;
@@ -409,6 +410,13 @@ public class HomeWindow extends JFrame {
 		panel_16.add(lblFile);
 		
 		JLabel label_15 = new JLabel("File");
+		label_15.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				FileHandler.readFromFile();
+			}
+		});
 		label_15.setHorizontalAlignment(SwingConstants.CENTER);
 		label_15.setForeground(Color.BLACK);
 		label_15.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 16));
@@ -607,7 +615,7 @@ public class HomeWindow extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
-				
+				FileHandler.readFromFile();
 			}
 		});
 		label_22.setHorizontalAlignment(SwingConstants.CENTER);
